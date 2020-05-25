@@ -10,6 +10,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $highScore = $_COOKIE['user_highscore'];
     $username = htmlspecialchars($_POST['username']);
 
+    $rowSQL =" SELECT MAX( score ) AS max FROM highscore ";
+    $stmt3 = $db->prepare($rowSQL);
+    $stmt3->execute();
+    $rowi = $stmt3->fetch(PDO::FETCH_ASSOC);
+    $largestNumber = $rowi['max'];
+
+
+     if($highScore > $largestNumber){
+        $highScoreMsg = "HIGH SCOREEEEE CONGR";
+      //  echo "<script type='text/javascript'>alert('$highScoreMsg');</script>";
+            // echo '<h1>Du Har fan max poäng!</h1>';
+        }
+
     if (!$stmt1->fetch(PDO::FETCH_ASSOC)) {
 
         $sql = "INSERT INTO highscore (username, score)
@@ -29,7 +42,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $count = 0;
         foreach ($stmt2->fetch(PDO::FETCH_ASSOC) as $value) {
             $count = $value;
-             echo '<h2>Username already exist</h2>';
+            // $message = "the username already exists, choose another one.";
+            // echo "<script type='text/javascript'>alert('$message');</script>";
+              echo '<h2>Username already exist</h2>';
         }
 
         if ($count >= 1) {

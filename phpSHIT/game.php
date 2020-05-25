@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../styles/app.css"/>
     <link rel="stylesheet" type="text/css" href="../styles/game.css"/>
 </head>
-<body>
+<body onload="getQuestions()">
     <div class="container">
         <div id="game" class="justify-center flex-column">
           <div id="hud">

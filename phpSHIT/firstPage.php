@@ -9,7 +9,7 @@
 
 </head>
 
-<body>
+<body onload="setDefaultDifficulty()">
     <div class="container">
         <div id="home" class="flex-center flex-column">
             <h1>Angies Quiz</h1>
@@ -26,7 +26,7 @@
             <a class="btn" href="http://localhost/Quiz-project/phpSHIT/highScore.php">High Scores</a>
         </div>
     </div>
-    <script src="game.js"></script>
+    <script src="firstPage.js"></script>
 </body>
 
 </html>
