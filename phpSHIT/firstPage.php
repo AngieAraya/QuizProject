@@ -14,7 +14,7 @@
         <div id="home" class="flex-center flex-column">
             <h1>Angies Quiz</h1>
 
-            <div style="width:200px;">
+            <div>
                 <select id="selectedOption" onchange="handleChange()">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>

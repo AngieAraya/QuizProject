@@ -1,11 +1,11 @@
 const DEFAULT_DIFFICULTY = "easy";
-let question = document.getElementById("question");
+const question = document.getElementById("question");
 // console.log(question);
-let choices = Array.from(document.getElementsByClassName("choice-text"));
+const choices = Array.from(document.getElementsByClassName("choice-text"));
 // console.log(choices);
-let questionCounterText = document.getElementById("questionCounter");
-let correctQuestionText = document.getElementById("correctQuestion");
-let scoreText = document.getElementById("score");
+const questionCounterText = document.getElementById("questionCounter");
+const correctQuestionText = document.getElementById("correctQuestion");
+const scoreText = document.getElementById("score");
 
 let currentQuestion = {};
 let acceptiongAnswers = false;
@@ -32,7 +32,7 @@ function getQuestions() {
       // questions = loadedQuestions;
       questions = loadedQuestions.results.map((loadedQuestion) => {
         const formattedQuestion = {
-          question: loadedQuestion.question,
+          question: loadedQuestion.question
         };
 
         const answerChoices = [...loadedQuestion.incorrect_answers];
@@ -47,7 +47,7 @@ function getQuestions() {
         answerChoices.forEach((choice, index) => {
           formattedQuestion["choice" + (index + 1)] = choice;
         });
-        console.log(formattedQuestion);
+      //  console.log(formattedQuestion);
 
         return formattedQuestion;
       });
@@ -58,9 +58,26 @@ function getQuestions() {
     });
 }
 
-const CORRECT_BONUS = 10;
+let CORRECT_BONUS = '';
 const CORRECT_ANS = 1;
 const MAX_QUESTIONS = 3;
+
+ if(difficulty == 'easy'){
+  CORRECT_BONUS = 1;
+  // console.log('det är easy mannen');
+ }
+ if(difficulty == 'medium'){
+  CORRECT_BONUS = 3;
+  //console.log('det är medium mannen');
+ }
+ if(difficulty == 'hard'){
+  CORRECT_BONUS = 5;
+
+ // console.log('det är hard mannen');
+ }
+
+ console.log('Vad är pååängen', difficulty);
+ 
 
 startGame = () => {
   questionCounter = 0;
@@ -75,8 +92,8 @@ getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
     // go to the end page
     //  console.log(question);
-    console.log(score + "score");
-    console.log(ans + "ans");
+    // console.log(score + "score");
+    // console.log(ans + "ans");
 
     localStorage.setItem("mostRecentScore", score);
     localStorage.setItem("rightAns", ans);
@@ -92,7 +109,7 @@ getNewQuestion = () => {
   question.innerText = currentQuestion.question;
 
   // console.log("angie ", availableQuestions);
-  console.log("choices ", choices);
+  // console.log("choices ", choices);
 
   choices.forEach((choice) => {
     const number = choice.dataset["number"];
@@ -149,5 +166,5 @@ incrementScore = (num) => {
 
 incrementAns = (num) => {
   ans += num;
-  correctQuestionText.innerText = `${questionCounter} / ${MAX_QUESTIONS}`;
+  correctQuestionText.innerText = `${ans} / ${MAX_QUESTIONS}`;
 };

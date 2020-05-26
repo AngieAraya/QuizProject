@@ -17,12 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
     $largestNumber = $rowi['max'];
 
 
-     if($highScore > $largestNumber){
-        $highScoreMsg = "HIGH SCOREEEEE CONGR";
-      //  echo "<script type='text/javascript'>alert('$highScoreMsg');</script>";
-            // echo '<h1>Du Har fan max poäng!</h1>';
-        }
-
     if (!$stmt1->fetch(PDO::FETCH_ASSOC)) {
 
         $sql = "INSERT INTO highscore (username, score)
@@ -32,6 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':score', $highScore);
         $stmt->execute();
+//OBS! ta bart && $hoghscore >  0 om det knasar
+     if($highScore > $largestNumber && $highScore > 0 ){
+        $highScoreMsg = "HIGH SCOREEEEE CONGR";
+        echo "<script type='text/javascript'>alert('$highScoreMsg');</script>";
+            // echo '<h1>Du Har fan max poäng!</h1>';
+        }
+
     } else {
 
         $sql2 = "SELECT COUNT(*) FROM highscore where username = :username";
@@ -42,9 +43,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
         $count = 0;
         foreach ($stmt2->fetch(PDO::FETCH_ASSOC) as $value) {
             $count = $value;
-            // $message = "the username already exists, choose another one.";
-            // echo "<script type='text/javascript'>alert('$message');</script>";
-              echo '<h2>Username already exist</h2>';
+            // print_r ($value);
+
+            if($count == 1) {
+                // echo 'bajs ha ' . $count;
+                 $message = "the username already exists, choose another one.";
+                 echo "<script type='text/javascript'>alert('$message');</script>";
+                 // echo '<h2>Username already exist</h2>';
+                
+            }
         }
 
         if ($count >= 1) {
@@ -55,6 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') :
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':score', $highScore);
             $stmt->execute();
+
+     if($highScore > $largestNumber){
+        $highScoreMsg = "HIGH SCOREEEEE CONGR";
+        echo "<script type='text/javascript'>alert('$highScoreMsg');</script>";
+            // echo '<h1>Du Har fan max poäng!</h1>';
+        }
         }
     }
 
@@ -81,7 +94,7 @@ endif;
             <h3 id="procent"></h3>
             <form action="" name="myForm" method="POST" onsubmit="return validateForm()">
                 <input type="text" name="username" id="username" placeholder="username" required>
-                <button type="submit" class="btn" id="saveScoreBtn">
+                <button type="submit" class="btn">
                     Save
                 </button>
             </form>
