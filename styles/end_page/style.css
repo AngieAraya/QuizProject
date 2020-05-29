@@ -1,0 +1,171 @@
+:root {
+  font-size: 62.5%;
+  background-image: url("../../img/quizStart.jpg");
+  width: 100%;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #d801d1;
+}
+
+h1 {
+  font-size: 5.4rem;
+  color: #56a5eb;
+  margin-bottom: 5rem;
+}
+
+h3 {
+  font-size: 2.8rem;
+  font-weight: 500;
+}
+
+.finalScore {
+  font-size: 4.2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.totalRight {
+  font-size: 2.5rem;
+}
+
+@media (min-width: 500px) {
+  .totalRight {
+    font-size: 4.2rem;
+  }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  width: 20rem;
+  text-align: center;
+  border: 0.3rem solid #48ec87;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #3bc25d;
+  background-color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0.4rem 1.4rem 0 rgba(26, 182, 91, 0.5);
+          box-shadow: 0 0.4rem 1.4rem 0 rgba(26, 182, 91, 0.5);
+  -webkit-transform: translateY(-0.1rem);
+          transform: translateY(-0.1rem);
+  -webkit-transition: -webkit-transform 150ms;
+  transition: -webkit-transform 150ms;
+  transition: transform 150ms;
+  transition: transform 150ms, -webkit-transform 150ms;
+}
+
+form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+input {
+  margin-bottom: 1rem;
+  width: 20rem;
+  padding: 1.5rem;
+  font-size: 1.8rem;
+  border: none;
+  -webkit-box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+          box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+}
+
+input::-webkit-input-placeholder {
+  color: #f566be;
+}
+
+input:-ms-input-placeholder {
+  color: #f566be;
+}
+
+input::-ms-input-placeholder {
+  color: #f566be;
+}
+
+input::placeholder {
+  color: #f566be;
+}
+
+.alert {
+  display: block;
+  color: #ff0505;
+  font-size: 15px;
+}
+
+@media (min-width: 500px) {
+  .alert {
+    font-size: 25px;
+  }
+}
+/*# sourceMappingURL=style.css.map */

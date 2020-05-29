@@ -4,14 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Angies Quizz</title>
-  <link rel="stylesheet" type="text/css" href="../styles/app.css" />
-  <link rel="stylesheet" type="text/css" href="../styles/game.css" />
+  <title>Quizzy</title>
+  <link rel="stylesheet" type="text/css" href="styles/playQuiz_page/style.css"/>
 </head>
 
 <body onload="getQuestions()">
   <div class="container">
-    <div id="game" class="justify-center flex-column">
+    <div id="game" class="justify-center flex-column game">
       <div id="hud">
         <div id="hud-item">
           <p class="hud-prefix">
@@ -23,7 +22,7 @@
         </div>
         <div id="hud-item">
           <p class="hud-prefix">
-            Amount of right answers
+            Correct answers
           </p>
           <h1 class="hud-main-text" id="correctQuestion">
             0
@@ -31,7 +30,7 @@
         </div>
         <div id="hud-item">
           <p class="hud-prefix">
-            Score
+            Points
           </p>
           <h1 class="hud-main-text" id="score">
             0
@@ -57,7 +56,7 @@
       </div>
     </div>
   </div>
-  <script src="game.js"></script>
+  <script src="playQuiz.js"></script>
 </body>
 
 </html>

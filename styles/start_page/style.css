@@ -1,0 +1,125 @@
+:root {
+  font-size: 62.5%;
+  background-image: url("../../img/penn.jpg");
+  width: 100%;
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #0f0f0f;
+}
+
+.infoText {
+  margin: 16px;
+  text-align: center;
+  font-size: 15px;
+}
+
+@media (min-width: 500px) {
+  .infoText {
+    font-size: 19px;
+    max-width: 482px;
+  }
+}
+
+.pointList {
+  text-align: left;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 3% 14%;
+}
+
+h1 {
+  font-size: 5.4rem;
+  color: #56a5eb;
+  margin-bottom: 3rem;
+}
+
+#selectedOption {
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+/* UTILITIES */
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.container > * {
+  width: 100%;
+}
+
+.flex-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.btn {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  width: 20rem;
+  text-align: center;
+  border: 0.3rem solid #48ec87;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #3bc25d;
+  background-color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0 0.4rem 1.4rem 0 rgba(26, 182, 91, 0.5);
+          box-shadow: 0 0.4rem 1.4rem 0 rgba(26, 182, 91, 0.5);
+  -webkit-transform: translateY(-0.1rem);
+          transform: translateY(-0.1rem);
+  -webkit-transition: -webkit-transform 150ms;
+  transition: -webkit-transform 150ms;
+  transition: transform 150ms;
+  transition: transform 150ms, -webkit-transform 150ms;
+}
+/*# sourceMappingURL=style.css.map */
